@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function aaa(){	//函数:是自由的
+			alert('abc');
+		}
+		var arr=[1,2,3,4];
+		arr.aaa=function(){	//方法:是属于对象arr的
+			alert('abc');
+		}
+		aaa();
+		arr.aaa();
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+	String类型有两种生成方式：
+	(1)Var str = “hello world”;
+	(2)Var str2 = new String(“hello world”);
+	 */
+		function IsString(str){
+			return (typeof str == "string" || str.constructor == String);
+			}
+			var str = "";
+			alert(IsString(1));//false
+			alert(IsString(str));//true
+			alert(IsString(new String(str)));//true
+	</script>
+</body>
+</html>

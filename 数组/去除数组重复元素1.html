@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去重</title>
+</head>
+<body>
+	<script>
+		function unique(array){
+		  var n = [array[0]]; //结果数组
+		  //从第二项开始遍历
+		  for(var i = 1; i < array.length; i++) {
+		    //如果当前数组的第i项在当前数组中第一次出现的位置不是i，
+		    //那么表示第i项是重复的，忽略掉。否则存入结果数组
+		    if (array.indexOf(array[i]) == i){
+		     	n.push(array[i]);
+		 	}
+		  }
+		  return n;
+		}
+		var array=[1,4,2,5,4,4,3,3,1];
+		console.log(unique(array));
+	</script>
+</body>
+</html>

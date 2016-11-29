@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡排序</title>
+</head>
+<body>
+<script>
+	var score=[11,22,33,44,55,66,77,88,99,100];
+	for(var i=0;i<score.length;i++){
+		for(var j=i+1;j<score.length;j++){
+			if(score[j]>score[i]){
+				var tmp=score[i];
+				score[i]=score[j];
+				score[j]=tmp;
+			}
+		}
+	}
+	document.write("<br/><h1>排序后的成绩</h1>");
+	for(var i=0;i<score.length;i++){
+		document.write("第"+(i+1)+"个学生的成绩是"+score[i]+"<br/>");
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

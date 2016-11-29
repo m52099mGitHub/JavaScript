@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background: red
+        }
+    </style>
+    <script>
+        function getStyle(obj,name){
+            if(obj.currentStyle){
+                return obj.currentStyle[name];
+            }
+            else{
+                return getComputedStyle(obj,'rubbish')[name];
+            }
+        }
+        window.onload=function(){
+            var oDiv=document.getElementById('div1');
+                alert(getStyle(oDiv,'width'));
+//            alert(getStyle(oDiv,'background'));//不能获取符合样式
+
+            }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

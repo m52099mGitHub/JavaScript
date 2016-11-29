@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background: red
+        }
+        </style>
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementById('div1');
+//            alert(oDiv.style.width);//style不能获取行间样式
+//            alert(oDiv.currentStyle.width);//获取行间样式  ie可用
+            alert(getComputedStyle(oDiv,'ryu').width);//ie不可用
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

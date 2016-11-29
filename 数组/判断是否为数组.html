@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arrayStr=new Array("1","2","3","4","5");    
+		alert(arrayStr instanceof Array); 
+
+		function isArray(obj) {      
+      return Object.prototype.toString.call(obj) === '[object Array]';       
+ }
+ 		alert(isArray(arrayStr));
+	</script>
+</body>
+</html>

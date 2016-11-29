@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function createPerson(name,qq){	//构造函数
+			//工厂方式
+			//原料
+			// var obj=new Object();
+			//加工
+			//这里不需要new,系统做了这件事 var this=new Object()
+			//
+			this.name=name;
+			this.qq=qq;
+			this.showName=function(){
+				alert("我的名字是:"+this.name);
+			};
+			this.showQQ=function(){
+				alert("这是我的QQ:"+this.qq);
+			}
+			//出厂
+			// return obj;
+			//这里不需要return,系统会自动返回 return this
+		}
+
+		//这里加new时 ,上面的系统做的事发生了
+		var obj=new createPerson('hyk','1051905606');
+		var obj2=new createPerson('xx','1051905689');
+		obj.showName();
+		obj.showQQ();
+		// alert(obj.showName=obj2.showName);//返回false
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象</title>
+</head>
+<body>
+	<h1>通过函数创建对象</h1>
+	<script>
+		function createNpc(){
+			var p=new Object();
+			p.hp=100;
+			p.act=90;
+			p.money=999;
+			p.move=function(){
+				document.write("正在移动");
+			}
+			return p;
+		}
+		var p1=createNpc();
+		var p2=createNpc();
+		alert(p1.hp);
+		alert(p2.hp);
+		//通过函数的形式将对象的初始化进行封装
+		function newNpc(n,h,a,m){
+			this.act=a;
+			this.hp=h;
+			this.money=m;
+			this.name=n;
+			this.move=function(){
+				document.write(this.name+"正在移动");
+			}
+		}
+		var p3=new newNpc('王一',100,99,999);
+		var pro="";//输出p3对象中的所有属性
+		for(pro in p3){
+			document.write("p3."+pro+"="+p3[pro]+"<br/>");
+		}
+		p3.move();
+		var p4=new newNpc('mm',100,100,999);
+		p4.move();
+
+	</script>
+</body>
+</html>

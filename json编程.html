@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json编程</title>
+</head>
+<body>
+	<input type="button" value="Json字符串转换为Json对象" onclick="fun1()">
+	<input type="button" value="Json对象的获取" onclick="fun2()">
+	<input type="button" value="Json对象转换为Json字符串" onclick="fun3()">
+
+	<script>
+		var jsonStr='{"name":"wangyi","age":18}';
+		var jsonObj={
+			name:"www",
+			age:18
+		}
+		function fun1(){
+			//把Json字符串转换为Json对象
+			var JObj=eval("("+jsonStr+")");
+			alert(JObj.name);
+			alert(JObj.age);
+		}
+		function fun2(){
+			alert(jsonObj.name);
+			alert(jsonObj.age);
+		}
+		function fun3(){
+			alert(JSON.stringify(jsonObj));
+		}
+	</script>
+</body>
+</html>

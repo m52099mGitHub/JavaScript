@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动条事件</title>
+	<style>
+		div{
+			height:1000px;
+		}
+	</style>
+</head>
+<body>
+
+<div>
+	ss
+</div>
+	<script>
+		window.onload=function(){
+			var EventUtil = {
+	    		addHandler: function (element, type, handler) {
+	        		if (element.addEventListener) {
+	            		element.addEventListener(type, handler, false);
+	        		} else if (element.attachEvent) {
+	           			 element.attachEvent("on" + type, handler);
+	        		} else {
+	            		element["on" + type] = handler;
+	        	}
+	    }
+	};
+				EventUtil.addHandler(window, "scroll", function () {
+				    if (document.compatMode == "CSS1Compat") {//兼容模式开启
+				        alert(document.documentElement.scrollTop);
+				    } else {
+				        alert(document.body.scrollTop);
+				    }
+				})
+
+		}
+	</script>
+</body>
+</html>

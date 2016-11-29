@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+			border: 0;
+		}
+		body{font-size: 12px;}
+		#demo{
+			overflow:hidden;
+			height: 120px;
+			width: 150px;
+			margin:90px auto; 
+			background: #ccc;
+		}
+		#demo1,#demo2{
+			height: auto;
+			text-align:left;  
+		}
+		#demo1 li,#demo2 li{
+			list-style-type: none;
+			height: 22px;
+			text-align:left;
+			text-indent: 15px; 
+		}
+	</style>
+	<script>
+		var speed=60;
+		window.onload=function(){
+			var demo=document.getElementById("demo");
+			var demo1=document.getElementById("demo1");
+			var demo2=document.getElementById("demo2");
+			demo2.innerHTML=demo1.innerHTML;
+			function marQuee(){
+				if(demo.scrollTop>=demo1.offsetHeight){
+					demo.scrollTop=0;
+				}
+				else{
+					demo.scrollTop=demo.scrollTop+1;
+				}
+			}
+			var timer=setInterval(marQuee,speed);
+			demo.onmouseover=function(){
+				clearInterval(timer);
+			}
+			demo.onmouseout=function(){
+				timer=setInterval(marQuee,speed);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="demo">
+		<ul id="demo1">
+			<li><a href="##">脚本之家欢迎您的到来</a></li>
+			<li><a href="##">脚本之家欢迎您的到来</a></li>
+			<li><a href="##">脚本之家欢迎您的到来</a></li>
+			<li><a href="##">脚本之家欢迎您的到来</a></li>
+			<li><a href="##">脚本之家欢迎您的到来</a></li>
+			<li><a href="##">脚本之家欢迎您的到来</a></li>
+			<li><a href="##">脚本之家欢迎您的到来</a></li>
+			<li><a href="##">脚本之家欢迎您的到来</a></li>
+		</ul>
+		<div id="demo2"></div>
+	</div>
+</body>
+</html>

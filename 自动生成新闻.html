@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input id="btn" type="button" value="生成新闻">
+	<ul id="list"></ul>
+	<script>
+	window.onload=function(){
+		var arr=[
+			'传媒大学被害女学生父亲不接受道歉 嫌犯无精神障碍',
+			'“港独”头目黄之锋窜访美国 与美参议员“会面”(图)',
+			'台媒：大陆4年造13艘052D 将有4艘配合辽宁舰',
+			'偷鸡贼被抓 内裤被群众扯出吓到爬街',
+			'中国留德女生称遭难民强暴 驻德使馆通报：接到报案',
+			'澳门第63届格兰披治赛车大赛'
+		];
+		var oBtn=document.getElementById("btn");
+		var oUl=document.getElementById("list");
+		var onOff=true;
+		oBtn.onclick=function(){
+			if(onOff){
+				// onOff=false;
+				for(var i=0;i<arr.length;i++){
+				oUl.innerHTML+='<li>'+arr[i]+'</li>';
+				}
+				onOff=false;
+			}
+		}
+
+	}
+	</script>
+</body>
+</html>

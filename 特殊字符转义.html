@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>特殊字符串转义</title>
+</head>
+<body>
+	<script>
+
+	function escapeHtml(str){
+		return str.replace(/[<>"&]/g),function(match){
+				switch(match){
+					case "<":
+					return "&lt;";
+					break;
+					case ">":
+					return "&gt;";
+					break;
+					case "&":
+					return "&amp;";
+					break;
+					case "\"":
+					return "&quot;";
+					break;
+				}
+			}
+	}
+	var str=window.prompt("请输入特殊字符!");
+	alert(escapeHtml(str))
+	// console.log(escapeHtml(str));
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html> 
+<head> 
+<script type="text/javascript"> 
+function showPosition(e){ 
+var x,y; 
+var e = e||window.event; 
+
+document.getElementById("clientX").value = e.clientX+document.body.scrollLeft+document.documentElement.scrollLeft; 
+document.getElementById("clientY").value = e.clientY+document.body.scrollTop+document.documentElement.scrollTop ;
+document.getElementById("pageX").value = e.clientX+document.body.scrollLeft+document.documentElement.scrollLeft; 
+document.getElementById("pageY").value = e.clientY+document.body.scrollTop+document.documentElement.scrollTop ;
+document.getElementById("screenX").value = e.clientX+document.body.scrollLeft+document.documentElement.scrollLeft; 
+document.getElementById("screenY").value = e.clientY+document.body.scrollTop+document.documentElement.scrollTop ;
+
+} 
+</script> 
+</head> 
+<body> 
+<div onmousemove="showPosition(event);" style="height:100%; width:100%;"> 
+clientX:<input id="clientX" type="text" value="" /> <br/>
+clientY:<input id="clientY" type="text" value="" /> <br/>
+pageX:<input id="pageX" type="text" value="" /> <br/>
+pageY:<input id="pageY" type="text" value="" /><br/>
+screenX:<input id="screenX" type="text" value="" /> <br/>
+screenY:<input id="screenY" type="text" value="" /><br/>
+</div> 
+</body> 
+</html> 

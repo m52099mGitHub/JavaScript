@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            position: relative;
+        }
+        #smallP{
+            position: relative;
+            width:370px;
+            height:260px;
+        }
+        #fbox{
+            position: absolute;
+            display: none;
+            opacity:0.6;
+            width:60px;
+            height:60px;
+            background: #ccc;
+        }
+        #bigP{
+            position: absolute;
+            top:0;
+            left:380px;
+            width:400px;
+            height:350px;
+            overflow: hidden;
+            display: none;
+        }
+        #bigP img{
+            width:600px;
+            height:600px;
+        }
+</style>
+</head>
+<body>
+<div class="wrap">
+        <div id="smallP">
+        <div id="fbox">
+
+        </div>
+         <img src="img/美女.jpg"/>
+        </div>
+        <div id="bigP">
+        <img src="img/美女.jpg" />
+        </div>
+</div>
+ <script type="text/javascript">
+        window.onload=function(){
+            var fbox=document.getElementById("fbox");
+            var smallP=document.getElementById("smallP");
+            var bigP=document.getElementById("bigP");
+        smallP.onmousemove=function(event){
+            fbox.style.display="block";
+            bigP.style.display="block";
+            var ev=event||window.event;
+        //设置半透明小方块位置跟随鼠标位置移动
+        fbox.style.top=ev.clientY-fbox.offsetHeight+"px";
+            fbox.style.left=ev.clientX-fbox.offsetWidth+"px";
+        //如果半透明小方块相对顶部位置大于它和小图片区的高度或宽度之差，表示它移出了小图片区，设置它的位置正好处于小图片区的边缘
+        if(parseInt(fbox.style.top)>=smallP.offsetHeight-fbox.offsetHeight){
+            fbox.style.top=smallP.offsetHeight-fbox.offsetHeight;
+        }
+        if(parseInt(fbox.style.left)>=smallP.offsetWidth-fbox.offsetWidth){
+            fbox.style.top=smallP.offsetWidth-fbox.offsetWidth;
+        }
+        //如果小图片区相对顶部位置为0，即它从上端移出小图片区，设置其位置为0，左边同理
+        if(parseInt(fbox.style.top)<0){
+            fbox.style.top=0+"px";
+        }
+        if(parseInt(fbox.style.left)<0){
+            fbox.style.left=0+"px";
+        }
+        //鼠标移动的时候设置大图片区相对滚动距离，用来确定大图片的位置
+          bigP.scrollTop=ev.clientY*2-bigP.offsetHeight;
+        bigP.scrollLeft=ev.clientX*2-bigP.offsetWidth;
+        };
+        smallP.onmouseout=function(){
+            fbox.style.display="none";
+            bigP.style.display="none";
+        }
+        }
+        </script>
+</body>
+</html>

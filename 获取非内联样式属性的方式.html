@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作对象</title>
+	<style>
+		.test1{
+			width:300px;
+			height:300px;
+			background: green;
+			border-bottom:1px solid black;
+		}
+		.test2{
+			width:300px;
+			height: 300px;
+			background: #f00;
+		}
+	</style>
+	<script>
+	function getStyle(obj,attr){
+		return obj.currentStyle ? obj.currentStyle[attr]:getComputedStyle(obj,null)[attr];
+	}
+		function t(){
+			var div=document.getElementsByTagName('div')[0];
+			if(div.className.indexOf('test1')>=0){
+				div.className='test2';
+			}else{
+				div.className='test1';
+			}
+
+			// alert(getStyle(div,'width'));
+			div.style.width=parseInt(getStyle(div,'width'))+30+'px';
+			div.style.height=parseInt(getStyle(div,'height'))+5+'px';
+			div.style.borderBottomWidth=parseInt(getStyle(div,'borderBottomWidth'))+2+'px';
+		}
+	</script>
+</head>
+<body>
+	<div class="test1" style="width:300px;height:300px;border-bottom:1px solid blue" onmouseover="t()">点击div,使其背景色红绿交替,宽高增加5px,
+	下边框增粗5px</div>
+</body>
+</html>

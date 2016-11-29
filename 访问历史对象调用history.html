@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+</head>
+<body>
+<input type="button" id="btn1" value="上一页"><br/>
+<input type="button" id="btn2" value="上一页"><br/>
+<script>
+    var btn1=document.getElementById("btn1");
+    var btn2=document.getElementById("btn2");
+    btn1.onclick=function(){
+        //后退
+        history.back();
+    };
+    //前进
+    btn2.onclick=function(){
+        history.forward();
+    }
+</script>
+</body>
+</html>

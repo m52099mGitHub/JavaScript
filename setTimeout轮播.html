@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <style>
+        img{
+            width:200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<img src="img/1.jpg" alt="" id="pic">
+<script>
+    var pics=["img/1.jpg","img/2.jpg","img/3.jpg"];
+    //每隔3秒钟自动切换
+    var index=0;//当前显示图片索引
+    var loop=true;
+    function change(){
+        index=(index+1)%3;
+        var obj=document.getElementById("pic");
+        obj.src=pics[index];
+        if(loop){
+            setTimeout(change,1000);
+        }
+    }
+    setTimeout(change,1000);
+    var pic=document.getElementById("pic");
+    pic.onmouseover=function(){
+        loop=false;
+    };
+    pic.onmouseout=function(){
+        loop=true;
+        setTimeout(change,1000);
+    }
+</script>
+</body>
+</html>

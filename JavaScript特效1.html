@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:100px;
+			height:200px;
+			background: #0f0;
+		}
+		#test2{
+			background: #0ff;
+		}
+	</style>
+	
+</head>
+<body>
+	<h1>特效是什么?</h1>
+	<!-- 
+	<div id="test1" onclick="changeColor()"></div> 
+	-->
+	<div id="test1" onclick="changeColor()"></div>
+</body>
+<script>
+		/*function changeColor(){
+			var div=document.getElementById("test1");
+			div.id="test2";
+		}*/
+		var div=document.getElementById("test1");
+		div.addEventListener('click',function(){
+			div.id="test2";
+			alert(div.style.bgColor);
+		})
+	</script>
+</html>

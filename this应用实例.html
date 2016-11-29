@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li{
+			width: 100px;
+			height: 150px;
+			float:left;
+			margin-right: 30px;
+			background: #ccc;
+		}
+		div{
+			width: 80px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+			display: none;
+			margin:0 auto;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<div></div>
+		</li>
+		<li>
+			<div></div>
+		</li>
+		<li>
+			<div></div>
+		</li>
+	</ul>
+
+	<script>
+		var aLi=document.getElementsByTagName("li");
+
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onmouseover=function(){
+				this.getElementsByTagName('div')[0].style.display="block";
+			};
+			aLi[i].onmouseout=function(){
+				this.getElementsByTagName('div')[0].style.display="none";
+			};
+		}
+	</script>
+</body>
+</html>

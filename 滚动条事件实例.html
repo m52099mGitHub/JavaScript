@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#top_div{ 
+		 position:fixed; 
+		 bottom:80px; 
+		 right:0; 
+		 display:none; 
+		} 
+		.div{
+			width:2400px;
+			height:1500px;
+			border:1px solid red;
+			background-color: #00ff00;
+		}
+</style>
+</head>
+<body>
+	<a name="top1">顶部<a> 
+	<div id="top_div"><a href="#top1">返回顶部</a></div> 
+	<br /> 
+	<br /> 
+	<div class="div"> 
+	这里尽量多些<br />以便页面出现滚动条，限于篇幅本文此处略去 
+	</div>
+
+	<script type="text/javascript"> 
+		/*window.onscroll = function(){ 
+		 	var t = document.documentElement.scrollTop || document.body.scrollTop; 
+		 	console.log(t);
+		 	var top_div = document.getElementById( "top_div" ); 
+		 	if( t >= 300 ) { 
+		  		top_div.style.display = "inline"; 
+		 	} else { 
+		  		top_div.style.display = "none"; 
+		 	} 
+		} */
+
+		/*window.onscroll = function(){ 
+		 	var t = document.documentElement.scrollLeft || document.body.scrollLeft; 
+		 	console.log(t);
+		 	var top_div = document.getElementById( "top_div" ); 
+		 	if( t >= 300 ) { 
+		  		top_div.style.display = "inline"; 
+		 	} else { 
+		  		top_div.style.display = "none"; 
+		 	} 
+		}*/ 
+
+		window.onscroll=function(){
+			var t=document.documentElement.scrollTop || document.body.scrollTop ;
+			console.log(t);
+			var top_div=document.getElementById("top_div");
+			if(t>=300){
+				top_div.style.display="inline";
+			}else{
+				top_div.style.display="none";
+			}
+		}
+
+</script> 
+</body>
+</html>
+
+
+
+ 
+

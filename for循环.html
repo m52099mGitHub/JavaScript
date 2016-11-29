@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环</title>
+</head>
+<body>
+<script>
+    document.write("0~100输入能被3整除的数");
+    //在循环中添加条件
+    for(var n=0;n<100;n++){
+        if(n%3==0){
+            document.write(","+n);
+        }
+    }
+    document.write("<br/>");
+    document.write("输出0~100所有能被3整除或者尾数带3的数");
+    for(var n=0;n<100;n++){
+        if(n%3==0||n%10==3){
+            document.write(n+",")
+        }
+    }
+    document.write("<br/>");
+    document.write("打印三角形");
+    document.write("<br/>");
+    var rows=6;
+    for(var row=0;row<rows;row++){
+        //输出空格
+        for(var c=row;c<rows-1;c++){
+            document.write("&ensp;");
+        }
+        //输出*
+        for(var star=1;star<=row*2+1;star++){
+            document.write("*");
+        }
+        //输出换行
+        document.write("</br/>");
+    }
+    document.write("</br/>");
+    /*
+    * 小明市场买鸡
+    * 100元钱买公鸡,母鸡,小鸡
+    * 公鸡3元
+    * 母鸡5元
+    * 小鸡1元3只
+    * 如何用100元钱买100只鸡,要求公鸡母鸡小鸡都要买
+    * */
+    for(var gj=1;gj<33;gj++){
+        for(var mj=1;mj<20;mj++ ){
+            for(var xj=3;xj<300;xj+=3){
+                var num=gj+mj+xj;
+                var money=gj*3+mj*5+xj/3;
+                if((num==100) && money==100){
+                    document.write("买法:公鸡"+gj+"母鸡"+mj+"小鸡"+xj+"<br/>");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>去重</title>
+    <script>
+        var arr=[1,1,2,4,3,4,2];
+        Array.prototype.unique=function(){
+            var ret=[];
+            var o={};
+            var len=this.length;
+            for(var i=0;i<len;i++){
+                var v=this[i];
+                if(!o[v]){
+                    o[v]=1;
+                    ret.push(v);
+                }
+            }
+            return ret;
+        };
+        alert(arr.unique());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象</title>
+</head>
+<body>
+	<img src="img/美女.jpg" alt=""/>
+</body>
+<script>
+	document.getElementsByTagName('img')[0].onclick=function(ev){
+			ev=window.event || ev;//IE低版本的时间对象在event里面,不通过函数的第一个参数传过来,||上一个ev就可以实现兼容
+			console.log(ev);
+			alert('住手!');
+	}
+</script>
+</html>

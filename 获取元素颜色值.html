@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取元素颜色值</title>
+	<style>
+		body{background: RGB(222,222,2);}
+	</style>
+</head>
+<body>
+	<input type='button' value='点击按钮获取页面背景色' onclick="fun()"/>
+	<p>javascript的style属性只能获取内联样式，对于外部样式和嵌入式样式需要用currentStyle属性。但是，currentStyle在FIrefox和Chrome下不支持，需要使用如下兼容性代码
+	<p>HTMLElement.prototype.__defineGetter__("currentStyle", function () { 
+    return this.ownerDocument.defaultView.getComputedStyle(this, null); 
+});</p></p>
+</body>
+<script>
+	HTMLElement.prototype.__defineGetter__("currentStyle", function () { 
+return this.ownerDocument.defaultView.getComputedStyle(this, null); 
+});
+ 
+function fun(){
+    var color = document.body.currentStyle.backgroundColor;
+    alert(color);
+}
+</script>
+</html>

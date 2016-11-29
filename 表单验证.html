@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+</head>
+<body>
+    <h2>登录</h2>
+    <form name="f1" action="http://www.jd.com/" method="post" onsubmit="return check();">
+        用户名:<br/><input type="text" name="username" onblur="endus();"><br/>
+        密 &nbsp;码:<input type="password" name="password"/>
+        <input type="email" name="email" value="请输入邮箱" onfocus="beforeInput();">
+        <input type="submit" value="登录">
+    </form>
+    <script>
+        //让用户名获取焦点
+        document.f1.username.focus();
+        function endus(){//当用户名的输入框丢失焦点
+            var uname=document.f1.username.value;
+            if(uname==""){
+//                alert("用户名不能为空!");
+                document.f1.username.focus();
+            }
+        }
+        function beforeInput(){
+            document.f1.email.value="";
+        }
+        function check(){
+            var nowf=document.f1;//得到当前表单对象
+//            var nowf=document.forms[0];//得到当前表单对象
+            var uname=nowf.username.value;
+            var pwd=nowf.password.value;
+            if(uname==null || uname=="" || pwd==null || pwd==""){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

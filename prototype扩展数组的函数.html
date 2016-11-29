@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	<script>
+		var menu=['凉菜','热菜','主食'];
+		menu.push("酒水");
+		//定义一个函数输出数组的所有元素
+		function print(){
+			for(var i=0;i<this.length;i++){
+				document.write(this[i]+"</br>");
+			}
+		}
+		Array.prototype.newFun=print;//维数组添加新的函数
+		menu.newFun();
+	</script>
+</body>
+</html>

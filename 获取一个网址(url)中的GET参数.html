@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取URL参数</title>
+</head>
+<body>
+	<script>
+		function serilizeUrl(url){
+			var result={};
+			var url=url.split("?")[1];
+			var map=url.split("&");
+			for(var i=0,len=map.length;i<len;i++){
+				result[map[i].split("=")[0]]=map[i].split("=")[1];
+			}
+			return result;
+		}
+		var url="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&ch=1&tn=myie2dg&wd=%E5%B7%AE%E5%80%BC%20%E8%8B%B1%E6%96%87&oq=js%20prompt()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95&rsv_pq=defb8a720000ae5f&rsv_t=3b32Js5D6oWBJxAfqtgylzX%2BgqE7RORZL7XCbpdHXfLsKAn8ViJAj5ZMBnSACQ&rqlang=cn&rsv_enter=1&rsv_sug3=9&rsv_sug1=8&rsv_sug7=100&bs=js%20prompt()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95";
+		console.log(serilizeUrl(url));
+	</script>
+</body>
+</html>

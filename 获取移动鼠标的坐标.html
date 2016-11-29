@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取鼠标坐标</title>
+    <style>
+        #div1{
+            width:400px;
+            height:400px;
+        }
+    </style>
+</head>
+<body onmousemove="test();">
+    <div id="div1"></div>
+
+    <script>
+        var obj=document.getElementById("div1");
+        function test(){
+            var cx=event.clientX;
+            var cy=event.clientY;
+            var sx=event.screenX;
+            var sy=event.screenY;
+            var msg="clientX="+cx+"clientY="+cy+"screenX="+sx+"screenY"+sy;
+            obj.innerHTML=msg;//设置div里面的内容
+            window.status=msg;//设置状态条内容
+            window.document.title=msg;//设置当前文档的标题
+        }
+    </script>
+</body>
+</html>

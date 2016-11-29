@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件分离</title>
+	<style>
+		div{
+			width:300px;
+			height:300px;
+			background: #0ff;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script>
+	document.getElementsByTagName('div')[0].onclick=function(){
+		this.style.border="1px solid red";
+	}
+</script>
+</html>

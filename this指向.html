@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+
+
+<input id="btn" type="button" value="按钮">
+	<script>
+	//this: 指的是当前方法(函数)的那个对象
+		// alert(this);
+		// window.alert(this);
+		
+		/*function fn1(){
+			alert(this);//this指向window
+		}
+		fn1();
+		window.fn1();*/
+
+		/*
+		
+		 function fn1(){
+			alert(this);
+		}
+		var oBtn=document.getElementById("btn");
+		oBtn.onclick=fn1;//this指向input
+		
+		*/
+
+
+		/*
+		
+		var oBtn=document.getElementById("btn");
+		function fn1(){
+			alert(this);//this指向window
+		}
+		oBtn.onclick=function(){
+			fn1();//this指向window
+		};
+
+		*/
+
+		/*
+			fn();的this都是window
+		 */	
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

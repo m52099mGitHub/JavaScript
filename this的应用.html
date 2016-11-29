@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this的应用</title>
+</head>
+<body>
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+	<script>
+		/*var aBtn=document.getElementsByTagName('input');
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].onclick=function(){
+			this.style.background="red";
+			}
+		}*/
+
+
+
+		var aBtn=document.getElementsByTagName('input');
+		var that=null;
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].onclick=function(){
+				that=this;
+				fn1();
+			}
+		}
+		function fn1(){
+			that.style.background="red";
+		}
+	</script>
+</body>
+</html>

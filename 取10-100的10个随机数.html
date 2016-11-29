@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>取10个随机数</title>
+</head>
+<body>
+	<script>
+		var arr=[];
+		function getRandomNum(smallNum,bigNum){
+			var Dvalue=bigNum-smallNum+1;
+			return Math.floor(Math.random()*Dvalue+smallNum);//获得的随机数要记得弹出来,这样才能被外部用到
+		}
+		for(var i=0;i<10;i++){
+			arr.push(getRandomNum(10,100));
+		}
+		arr.sort();
+		console.log(arr);
+	</script>
+</body>
+</html>

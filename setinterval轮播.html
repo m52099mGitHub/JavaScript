@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <style>
+        img{
+            width:200px;
+            height: 200px;
+        }
+        #title{
+            text-align: center;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="title">
+    <h2>人物介绍</h2>
+</div>
+<div><img src="img/2.jpg" alt="" id="pic"></div>
+<script>
+    var pics=["img/1.jpg","img/2.jpg","img/3.jpg"];
+    var index=0;
+    var img=document.getElementById("pic");
+    function change(){
+        index=(index+1)%3;//让index在0,1,2之间变化
+        img.src=pics[index];
+    }
+    //设定定时器,每隔3秒钟切换一张图
+    var timer=setInterval(change,1000);
+    img.onmouseover=function(){
+        clearInterval(timer);
+    };
+    img.onmouseout=function(){
+        timer=setInterval(change,1000);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断数据类型</title>
+</head>
+<body>
+	<script>
+	//判断是不是数组
+		//方法1:
+		var arr=["a","b","c","d"];
+		if(arr instanceof Array){
+			alert("arr是数组");
+		}
+		//方法2:
+		if(!typeof Array.isArray==="undefined"){
+			Array.isArray=function(arg){
+				return Object.prototype.toString.call(arg)==="[object Array]";
+			}
+		}
+	</script>
+</body>
+</html>

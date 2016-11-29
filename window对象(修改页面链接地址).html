@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window对象</title>
+</head>
+<body>
+<input type="button" id="btn" value="百度一下">
+<script>
+   // window.alert("您好!");
+    //alert("您好,欢迎来到window!")
+    var bt=window.document.getElementById("btn");
+    bt.onclick=function(){
+        //修改当前页面的链接地址
+        window.location.href="http://www.baidu.com";
+    }
+</script>
+</body>
+</html>

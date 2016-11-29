@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统对象的分析</title>
+</head>
+<body>
+	<h2>系统对象的分析</h2>
+	<script>
+		//分析数学对象
+		var pro='';
+		// document.bgColor="red";
+		for(pro in document){
+			document.write("document."+pro+"="+document[pro]+"<br/>");
+		}
+		//分析自定义对象
+		var npc1=new function(){
+			this.hp=100;
+			this.act=99;
+			this.move=function(){
+				document.write("moving");
+			}
+		}
+		for(pro in npc1){
+			document.write("npc1."+pro+"="+npc1[pro]+"<br/>");
+		}
+	</script>
+</body>
+</html>

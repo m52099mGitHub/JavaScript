@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动的文字</title>
+	<style>
+		#oDiv{
+			width:200px;
+			height:200px;
+			border:3px ridge #00ffff;
+			background: red;
+			position:absolute;
+			left:100px;
+			top:100px;
+		}
+	</style>
+	<script>
+		var title=document.title.split("");
+		setInterval(function(){
+			title.push(title.shift());
+			document.title=title.join("");
+		},1000);
+	</script>
+</head>
+<body>
+<button ></button>
+	<div id="oDiv"></div>
+</body>
+</html>

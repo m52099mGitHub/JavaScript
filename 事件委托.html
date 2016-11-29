@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托</title>
+	<style>
+		table{
+			width:80%;
+			height:400px;
+			border-collapse: collapse;
+			background: #0f0;
+		}
+		td{
+			border:1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<h1>事件委托(target)</h1>
+	<table>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+<script>
+//不建议使用
+	/*var tds=document.getElementsByTagName('td');
+	var i=0;
+	while(i<tds.length){
+		tds[i].onclick=function(){
+			this.style.background="black";
+		}
+		i++;
+	}*/
+</script>
+<script>
+	var num=0;
+	document.getElementsByTagName('table')[0].onclick=function(ev){
+			ev.target.style.background=num++%2?'black':'white';
+	}
+</script>
+</html>

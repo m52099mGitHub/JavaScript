@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype+trim()</title>
+</head>
+<body>
+	<script>
+	//清除字符串前后空格的函数,使用自带接口trim(),考虑兼容性
+		if(!String.prototype.trim){
+			String.prototype.trim=function(){
+				return this.replace(/^\s+/,"").replace(/\s+$/,"");
+			}
+		}
+		var str=" \t\n  test string ".trim();
+		alert(str=="test string");//为true说明成功清除空格
+	</script>
+</body>
+</html>
